@@ -16,12 +16,12 @@ Government__Guru is a simple study platform for MPSC and UPSC aspirants. It prov
 
 *Clone the repository:
 
-1.git clone https://github.com/your-username/Government__Guru.git
+1. git clone https://github.com/your-username/Government__Guru.git
 
 
-2.Open the project folder
+2. Open the project folder
 
-3.Launch index.html in your browser
+3. Launch index.html in your browser
 
 🛠️ Tech Used
 
