@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Log In — Government Guru</title>
+  <style>
+    :root{
+      --sky-1:#e9f8ff;
+      --sky-2:#d0eeff;
+      --accent:#2b98c7;
+      --accent-dark:#207aa3;
+      --card:#ffffff;
+      --muted:#6b90a6;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: Inter, Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg,var(--sky-1),var(--sky-2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .card{
+      width:360px;
+      max-width:100%;
+      background:var(--card);
+      border-radius:14px;
+      padding:28px;
+      box-shadow:0 10px 30px rgba(16,60,90,0.08);
+      border:1px solid rgba(43,152,199,0.08);
+      text-align:center;
+    }
+
+    .brand {
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:8px;
+    }
+    .logo {
+      width:48px;height:48px;border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+      display:inline-flex;align-items:center;justify-content:center;
+      color:white;font-weight:700;font-size:18px;
+      box-shadow:0 6px 18px rgba(43,152,199,0.18);
+    }
+    h1{margin:6px 0 0;color:var(--accent-dark);font-size:20px}
+    p.sub{color:var(--muted);font-size:13px;margin:6px 0 18px}
+
+    form{display:block;text-align:left}
+    label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+    input[type="email"], input[type="password"]{
+      width:100%;
+      padding:12px 14px;
+      margin-bottom:12px;
+      border-radius:10px;
+      border:1px solid rgba(16,60,90,0.06);
+      background:#fbfeff;
+      font-size:14px;
+      outline:none;
+      transition:box-shadow .18s,transform .12s;
+    }
+    input:focus{box-shadow:0 8px 18px rgba(43,152,199,0.12); transform:translateY(-1px)}
+
+    .actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      margin-top:6px;
+    }
+
+    button.primary{
+      background:linear-gradient(180deg,var(--accent),var(--accent-dark));
+      color:white;border:none;padding:12px 16px;border-radius:10px;
+      cursor:pointer;font-weight:600;font-size:15px;flex:1;
+      box-shadow:0 8px 18px rgba(43,152,199,0.12);
+      transition:transform .14s;
+    }
+    button.primary:hover{transform:scale(1.02)}
+    a.link{
+      color:var(--accent);
+      text-decoration:none;font-size:13px;
+      padding:10px;border-radius:8px;
+    }
+
+    .secondary{
+      display:block;margin-top:14px;text-align:center;
+      font-size:14px;color:var(--muted);
+    }
+    .secondary a{color:var(--accent);text-decoration:none;font-weight:600}
+    .error{color:#c94a4a;font-size:13px;margin-top:6px}
+
+    footer.small{font-size:12px;color:var(--muted);margin-top:14px}
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <div class="brand">
+      <div class="logo">GG</div>
+      <div style="text-align:left">
+        <div style="font-weight:700;color:var(--accent-dark)">Government Guru</div>
+        <div style="font-size:12px;color:var(--muted)">Study anytime · exam resources</div>
+      </div>
+    </div>
+
+    <h1>Welcome back</h1>
+    <p class="sub">Log in to continue to the exam selection</p>
+
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="you@example.com" required>
+
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="Your password" required>
+
+      <div class="actions">
+        <button type="submit" class="primary">Log In</button>
+      </div>
+      <div id="error" class="error" style="display:none"></div>
+    </form>
+
+    <div class="secondary">
+      Don't have an account? <a href="SignUp.html">Sign up</a>
+    </div>
+
+    <footer class="small">By continuing you agree to our terms — this demo stores data locally only.</footer>
+  </main>
+
+<script>
+  // Simple login using localStorage users array (demo-only)
+  function getUsers(){
+    try{
+      return JSON.parse(localStorage.getItem('gg_users')||'[]');
+    }catch(e){
+      return [];
+    }
+  }
+
+  function handleLogin(e){
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim().toLowerCase();
+    const password = document.getElementById('password').value;
+    const errorEl = document.getElementById('error');
+
+    if(!email || !password){
+      errorEl.style.display='block';
+      errorEl.textContent='Please fill in both fields.';
+      return false;
+    }
+
+    const users = getUsers();
+    const found = users.find(u => u.email === email && u.password === password);
+
+    if(found){
+      // set simple "session"
+      localStorage.setItem('gg_current', JSON.stringify({email: found.email, name: found.name}));
+      window.location.href = 'Select.html';
+    } else {
+      errorEl.style.display='block';
+      errorEl.textContent='Invalid email or password. Try signing up if you don’t have an account.';
+    }
+    return false;
+  }
+</script>
+</body>
+</html>
