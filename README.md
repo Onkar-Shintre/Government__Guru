@@ -24,6 +24,7 @@ Open the project folder
 
 Launch index.html in your browser
 
+
 🛠️ Tech Used
 
 🌐 HTML
