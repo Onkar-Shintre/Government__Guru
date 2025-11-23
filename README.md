@@ -12,6 +12,7 @@ Government__Guru is a simple study platform for MPSC and UPSC aspirants. It prov
 
 🎯 Simple and easy-to-use interface
 
+
 🚀 How to Run
 
 *Clone the repository:
