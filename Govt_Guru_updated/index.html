@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GovtGuru — UPSC & MPSC Resources</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">GG</div>
+        <h1>GovtGuru</h1>
+      </div>
+
+      <nav>
+        <ul id="navList">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Select.html">Select Exam</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#updates">Updates</a></li>
+        </ul>
+      </nav>
+
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="cta" id="ctaButtons">
+          <a href="LogIn.html"><button class="btn login">Login</button></a>
+          <a href="SignUp.html"><button class="btn signup">Sign Up</button></a>
+        </div>
+
+        <div class="hamburger" id="hamburger" aria-label="Open menu" title="Menu">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile menu (hidden on desktop) -->
+    <div id="mobileMenu" style="display:none;max-width:1200px;margin:8px auto;padding:12px;">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <a href="index.html"
+          style="padding:10px;border-radius:8px;background:var(--glass);text-decoration:none;color:var(--muted)">Home</a>
+        <a href="Select.html"
+          style="padding:10px;border-radius:8px;background:var(--glass);text-decoration:none;color:var(--muted)">Select
+          Exam</a>
+        <a href="LogIn.html"
+          style="padding:10px;border-radius:8px;background:var(--glass);text-decoration:none;color:var(--muted)">Login</a>
+        <a href="SignUp.html"
+          style="padding:10px;border-radius:8px;background:var(--glass);text-decoration:none;color:var(--muted)">Sign
+          Up</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero container" aria-label="Hero">
+    <div class="hero-left">
+      <h2><span>All you need</span> to crack UPSC & MPSC — notes, PYQs & updates</h2>
+      <p>GovtGuru brings curated notes, topic-wise previous year questions, mock tests and live-class resources —
+        tailored for serious aspirants.</p>
+
+      <div class="actions">
+        <a href="SignUp.html"><button class="btn primary">Join Free — Get Full Access</button></a>
+        <a href="Select.html"><button class="btn ghost">Go to Exam Selection</button></a>
+      </div>
+
+      <div class="searchbar">
+        <input id="searchInput" placeholder="Search notes, PYQs or updates (topic, year)">
+        <button onclick="performSearch()">Search</button>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <img src="images/girl.png" alt="student studying illustration" width="420" height="320">
+    </div>
+  </section>
+
+  <!-- Quick resources -->
+  <main class="container">
+    <div class="grid reveal">
+      <div class="card">
+        <h3>Notes</h3>
+        <p>Chapter-wise concise notes tailored to UPSC & MPSC syllabus. Downloadable PDFs and quick revision sheets.</p>
+        <div class="exam-buttons" style="margin-top:12px">
+          <a class="upsc" href="notes/upsc/index.html"
+            style="background:linear-gradient(180deg,#7fd1ff,#37a7e0);padding:10px;border-radius:10px;color:white;text-decoration:none;font-weight:700">UPSC
+            Notes</a>
+          <a class="mpsc" href="notes/mpsc/index.html"
+            style="background:linear-gradient(180deg,#7fd1ff,#37a7e0);padding:10px;border-radius:10px;color:white;text-decoration:none;font-weight:700">MPSC
+            Notes</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Previous Year Questions (PYQ)</h3>
+        <p>Prelims & Mains PYQs organized by year and topic for efficient practice.</p>
+        <div class="exam-buttons" style="margin-top:12px">
+          <a class="upsc" href="PrilimsU.html"
+            style="background:linear-gradient(180deg,#7fd1ff,#37a7e0);padding:10px;border-radius:10px;color:white;text-decoration:none;font-weight:700">UPSC
+            PYQs</a>
+          <a class="mpsc" href="PrilimsM.html"
+            style="background:linear-gradient(180deg,#7fd1ff,#37a7e0);padding:10px;border-radius:10px;color:white;text-decoration:none;font-weight:700">MPSC
+            PYQs</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Mock Tests & Practice</h3>
+        <p>Timed mock tests and quick quizzes that mimic real exam conditions.</p>
+        <div style="margin-top:12px">
+          <a class="upsc" href="mock/upsc.html"
+            style="background:linear-gradient(180deg,#7fd1ff,#37a7e0);padding:10px;border-radius:10px;color:white;text-decoration:none;font-weight:700">Try
+            UPSC Mock</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Syllabus & Strategy</h3>
+        <p>Downloadable syllabus PDFs and curated strategy articles to plan your preparation effectively.</p>
+        <div style="margin-top:12px">
+          <a class="mpsc" href="syllabus.html"
+            style="background:linear-gradient(180deg,#7fd1ff,#4aa3df);padding:10px;border-radius:10px;color:white;text-decoration:none;font-weight:700">View
+            Syllabus</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="featured-new reveal">
+
+      <div class="featured-image">
+        <img src="images/teacher-explaining.png" alt="teacher explaining">
+      </div>
+
+      <div class="featured-cards">
+
+        <div class="card feature-box side-by-side">
+          <div class="content">
+            <span class="ribbon">Trusted • UPSC & MPSC</span>
+            <h3>Everything in one place</h3>
+            <p>Notes, PYQs, mock tests, live classes and quick strategies for both UPSC and MPSC. Use the exam selection
+              to jump straight to focused content.</p>
+            <div style="margin-top:12px; display:flex; gap:8px">
+              <a class="btn primary" href="Select.html">Select Exam</a>
+              <a class="btn ghost" href="LogIn.html">Login</a>
+            </div>
+          </div>
+          <!-- <div class="image">
+            <img src="images/teacher-explaining.png" alt="everything-in-one-place">
+          </div> -->
+        </div>
+
+        <div class="card feature-box side-by-side">
+          <div class="content">
+            <h3>Integrations & Tools</h3>
+            <p>Upload notes or link cloud files (Google Drive / OneDrive) for quick sharing and storage.</p>
+          </div>
+          <div class="image">
+            <img src="images/integrations.png" alt="integrations">
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <div class="feature-row-optimized reveal">
+
+      <div class="card feature-item side-by-side">
+        <div class="content">
+          <h3>GradeBook & Progress</h3>
+          <p>Track mock test scores and monitor topic‑wise improvement with detailed analytics.</p>
+        </div>
+        <div class="image">
+          <img src="images/gradebook.png" alt="gradebook" height="400px">
+        </div>
+      </div>
+
+      <div class="card feature-item side-by-side">
+        <div class="content">
+          <h3>Quiz Preview</h3>
+          <p>Take quick MCQs, true/false rounds, and warm‑up quizzes to boost speed and accuracy.</p>
+        </div>
+        <div class="image">
+          <img src="images/true-false.png" alt="quiz preview">
+        </div>
+      </div>
+    </div>
+
+    <section class="updates reveal" id="updates">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <h4>Latest Updates & News</h4>
+        <div style="font-size:13px;color:var(--muted)">Application dates, admit cards & important notices</div>
+      </div>
+
+      <div class="update-list" id="updateList"></div>
+
+      <div id="addUpdateArea" style="margin-top:12px;display:none">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <input id="updateText" placeholder="Add an update (eg: Prelims registration opens Oct 1)"
+            style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(16,60,90,0.06)">
+          <input id="updateLink" placeholder="Optional link"
+            style="flex:0 0 260px;padding:10px;border-radius:10px;border:1px solid rgba(16,60,90,0.06)">
+          <button class="btn primary" onclick="addUpdate()">Publish</button>
+        </div>
+        <div style="font-size:13px;color:var(--muted);margin-top:8px">Visible to logged-in users (demo uses
+          localStorage).</div>
+      </div>
+    </section>
+
+    <section class="testimonials-section reveal">
+      <h4>What aspirants say</h4>
+
+      <div class="testimonials-grid">
+
+        <div class="card testimonial-card">
+          <img src="images/testimonials.png" alt="testimonial">
+          <div class="testimonial-content">
+            <strong>Gloria Rose</strong>
+            <p>"GovtGuru saved me time. The notes and PYQs were exactly what I needed for prelims revision."</p>
+          </div>
+        </div>
+
+        <div class="card feature-card">
+          <h3>Discussion & Live Help</h3>
+          <p>Join private discussions or recorded lessons to clear doubts with mentors.</p>
+          <img src="images/discussion.png" alt="discussion" style="margin-top:12px;">
+        </div>
+
+        <div class="card feature-card">
+          <h3>Useful Links</h3>
+          <p>One place for syllabus PDFs, strategy guides and cloud-hosted notes.</p>
+
+          <div class="links">
+            <a href="PrilimsU.html"
+              style="background:linear-gradient(180deg,#7fd1ff,#37a7e0);padding:5px;border-radius:10px;color:white;text-decoration:none;font-weight:500">UPSC
+              Prelims PYQ →</a>
+            <a href="syllabus.html"
+              style="background:linear-gradient(180deg,#7fd1ff,#37a7e0);padding:5px;border-radius:10px;color:white;text-decoration:none;font-weight:500">Syllabus
+              PDFs →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer>
+    <div class="container" style="padding-top:18px;padding-bottom:40px">
+      <div class="foot-grid">
+        <div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <div
+              style="width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700">
+              GG</div>
+            <div>
+              <div style="font-weight:700;color:#083849">GovtGuru</div>
+              <div style="font-size:13px;color:var(--muted)">Notes • PYQs • Mock tests</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center">
+          <a href="LogIn.html"
+            style="background:linear-gradient(180deg,#7fd1ff,#37a7e0);padding:10px;border-radius:10px;color:white;text-decoration:none;font-weight:700">Login</a>
+          <a href="SignUp.html"
+            style="background:linear-gradient(180deg,#7fd1ff,#37a7e0);padding:10px;border-radius:10px;color:white;text-decoration:none;font-weight:700">Sign
+            Up</a>
+          <a href="Select.html"
+            style="background:linear-gradient(180deg,#7fd1ff,#37a7e0);padding:10px;border-radius:10px;color:white;text-decoration:none;font-weight:700">Select
+            Exam</a>
+          <a href="Contact.html"
+            style="background:linear-gradient(180deg,#7fd1ff,#37a7e0);padding:10px;border-radius:10px;color:white;text-decoration:none;font-weight:700">Contact</a>
+        </div>
+
+        <div style="min-width:220px">
+          <div style="font-weight:600;margin-bottom:6px">Subscribe for updates</div>
+          <div style="display:flex;gap:8px">
+            <input id="subscribeEmail" placeholder="Your email"
+              style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(16,60,90,0.06)">
+            <button class="btn primary" onclick="subscribe()">Subscribe</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px;color:var(--muted);font-size:13px">© GovtGuru — For UPSC & MPSC aspirants</div>
+    </div>
+  </footer>
+
+  <script src="Script/script.js"></script>
+</body>
+
+</html>
