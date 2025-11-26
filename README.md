@@ -25,7 +25,6 @@ Government__Guru is a simple study platform for MPSC and UPSC aspirants. It prov
 
 3. Launch index.html in your browser
 
-
 🛠️ Tech Used
 
 🌐 HTML
